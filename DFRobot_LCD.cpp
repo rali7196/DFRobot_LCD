@@ -11,6 +11,9 @@
  * @date  2017-2-10
  */
 
+
+
+//TODO, Try modifiying send(), command(), and write() in order to display values to LCD
 #include <Arduino.h>
 #include <stdio.h>
 #include <string.h>
@@ -176,6 +179,7 @@ void DFRobot_LCD::noBlinkLED(void)
     setReg(0x06, 0xff);
 }
 
+//TODO port this to espressif i2c
 inline size_t DFRobot_LCD::write(uint8_t value)
 {
 
@@ -184,6 +188,7 @@ inline size_t DFRobot_LCD::write(uint8_t value)
     return 1; // assume sucess
 }
 
+//TODO port this to espressif i2c
 inline void DFRobot_LCD::command(uint8_t value)
 {
     uint8_t data[3] = {0x80, value};
